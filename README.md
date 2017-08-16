@@ -6,11 +6,11 @@ Requires arp (address resolution protocol) to work.
 
 ## Install
 ```
-$ npm install --global find-pi
+$ npm install find-pi --save
 
 or
 
-$ yarn global add find-pi
+$ yarn add find-pi
 ```
 
 ## Usage
