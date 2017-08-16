@@ -1,0 +1,12 @@
+{
+  "name": "find-pi",
+  "version": "1.0.0",
+  "description": "Returns the IP address of a Raspberry Pi on a local network.",
+  "main": "index.js",
+  "repository": "https://github.com/dreamorosi/find-pi-cli",
+  "author": "Andrea Amorosi <dreamorosi@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "execa": "^0.8.0"
+  }
+}
