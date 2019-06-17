@@ -69,4 +69,38 @@ describe("Real stuff", () => {
   });
 });
 
-// TODO: Write tests for fn.parseReport() and extract it as utility
+// TODO: Finish writing tests for fn.parseReport()
+describe("Util parseReport", () => {
+  const expectedEmpty = [];
+  test("Empty report returns []", async () => {
+    const res = await utils.parseReport({});
+    expect(res).toEqual(expectedEmpty);
+  });
+  test("With host not in report[item] returns []", async () => {
+    const passedReport = {
+      "192.168.1.0": {}
+    };
+    const res = await utils.parseReport(passedReport);
+    expect(res).toEqual(expectedEmpty);
+  });
+  test("Empty report[item].host returns []", async () => {
+    const passedReport = {
+      "192.168.1.0": {
+        host: {}
+      }
+    };
+    const res = await utils.parseReport(passedReport);
+    expect(res).toEqual(expectedEmpty);
+  });
+  // `Empty report[item].host returns ${expectedEmpty}`
+  // `With hostnames not in report[item].host[0] returns ${expectedEmpty}`
+  // `With address not in report[item].host[0] returns ${expectedEmpty}`
+  // `Empty report[item].host[0].hostnames returns ${expectedEmpty}`
+  // `Empty report[item].host[0].address returns ${expectedEmpty}`
+  // `With hostname not in report[item].host[0].hostnames returns ${expectedEmpty}`
+  // `Empty report[item].host[0].hostnames[0].hostname[0] returns ${expectedEmpty}`
+  // `With item not in report[item].host[0].hostnames[0].hostname[0] returns ${expectedEmpty}`
+  // `With name not in report[item].host[0].hostnames[0].hostname[0].item returns ${expectedEmpty}`
+  // `With item not in report[item].host[0].address[0] returns ${expectedEmpty}`
+  // `With addr not in report[item].host[0].address[0].item returns ${expectedEmpty}`
+});

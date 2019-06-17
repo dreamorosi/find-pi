@@ -1,0 +1,114 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://example.com/root.json",
+    "type": "object",
+    "title": "Schema of the report returned by libnmap",
+    "required": [
+        "host"
+    ],
+    "properties": {
+        "host": {
+            "$id": "#/properties/host",
+            "type": "array",
+            "title": "The Host Schema",
+            "minItems": 1,
+            "items": {
+                "$id": "#/properties/host/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "required": [
+                    "address",
+                    "hostnames"
+                ],
+                "properties": {
+                    "address": {
+                        "$id": "#/properties/host/items/properties/address",
+                        "type": "array",
+                        "title": "The Address Schema",
+                        "minItems": 1,
+                        "items": {
+                            "$id": "#/properties/host/items/properties/address/items",
+                            "type": "object",
+                            "title": "The Items Schema",
+                            "required": [
+                                "item"
+                            ],
+                            "properties": {
+                                "item": {
+                                    "$id": "#/properties/host/items/properties/address/items/properties/item",
+                                    "type": "object",
+                                    "title": "The Item Schema",
+                                    "required": [
+                                        "addr"
+                                    ],
+                                    "properties": {
+                                        "addr": {
+                                            "$id": "#/properties/host/items/properties/address/items/properties/item/properties/addr",
+                                            "type": "string",
+                                            "title": "The Addr Schema",
+                                            "default": "",
+                                            "examples": [
+                                                "192.168.1.65"
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "hostnames": {
+                        "$id": "#/properties/host/items/properties/hostnames",
+                        "type": "array",
+                        "title": "The Hostnames Schema",
+                        "items": {
+                            "$id": "#/properties/host/items/properties/hostnames/items",
+                            "type": "object",
+                            "title": "The Items Schema",
+                            "required": [
+                                "hostname"
+                            ],
+                            "properties": {
+                                "hostname": {
+                                    "$id": "#/properties/host/items/properties/hostnames/items/properties/hostname",
+                                    "type": "array",
+                                    "title": "The Hostname Schema",
+                                    "minItems": 1,
+                                    "items": {
+                                        "$id": "#/properties/host/items/properties/hostnames/items/properties/hostname/items",
+                                        "type": "object",
+                                        "title": "The Items Schema",
+                                        "required": [
+                                            "item"
+                                        ],
+                                        "properties": {
+                                            "item": {
+                                                "$id": "#/properties/host/items/properties/hostnames/items/properties/hostname/items/properties/item",
+                                                "type": "object",
+                                                "title": "The Item Schema",
+                                                "required": [
+                                                    "name"
+                                                ],
+                                                "properties": {
+                                                    "name": {
+                                                        "$id": "#/properties/host/items/properties/hostnames/items/properties/hostname/items/properties/item/properties/name",
+                                                        "type": "string",
+                                                        "title": "The Name Schema",
+                                                        "default": "",
+                                                        "examples": [
+                                                            "raspberrypi.home"
+                                                        ]
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
